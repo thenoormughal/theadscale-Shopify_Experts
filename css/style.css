@@ -668,11 +668,7 @@ html {
 .social-link:hover {
   color: #ff944d;
 }
-img {
-  width: 100%;
-  height: auto;
-}
-/* ================= MOBILE RESPONSIVE ================= */
+/* ================= MOBILE RESPONSIVE IMPROVEMENTS ================= */
 
 /* Phones (max width 768px) */
 @media (max-width: 768px) {
@@ -680,13 +676,12 @@ img {
   /* General */
   body {
     font-size: 15px;
-    padding: 0 15px;
   }
 
   /* Hero Section */
   .hero-content {
     text-align: center;
-    padding: 40px 0;
+    padding: 50px 15px;
   }
 
   .hero-content h1 {
@@ -699,58 +694,114 @@ img {
     margin-bottom: 20px;
   }
 
+  /* Hero Stats */
   .hero-stats {
     flex-direction: column;
-    gap: 20px;
     align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .hero-stats .stat h2 {
+    font-size: 2rem;
+  }
+
+  .hero-stats .stat p {
+    font-size: 0.9rem;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 20px;
   }
 
   /* Portfolio Grid */
   .portfolio-grid {
-    grid-template-columns: 1fr; /* single column */
+    grid-template-columns: 1fr !important;
   }
 
-  /* Service Section */
-  .services-grid {
-    grid-template-columns: 1fr;
+  .portfolio-card {
+    margin-bottom: 20px;
   }
 
   /* Testimonials */
   .testimonial-card {
-    width: 100%;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
     margin: 10px 0;
   }
 
+  /* FAQ Section */
+  .faq {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    font-size: 0.95rem;
+  }
+
+  /* How-start Steps */
+  .steps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+  }
+
+  .step {
+    padding: 30px 15px;
+  }
+
   /* Footer */
-  .footer {
+  .footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 25px;
     text-align: center;
   }
 
-  .footer-columns {
-    flex-direction: column;
-    gap: 25px;
+  .footer-col ul li {
+    margin-bottom: 8px;
+  }
+
+  /* CTA Section */
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
   }
 }
 
 /* Tablets (max width 1024px) */
 @media (max-width: 1024px) {
+
+  /* Hero Section */
   .hero-content h1 {
     font-size: 2.2rem;
   }
 
+  /* Portfolio Grid */
   .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
+  /* Services Grid */
   .services-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Hero Stats */
+  .hero-stats .stat h2 {
+    font-size: 2.2rem;
   }
 }
-
-
-
-
-
-
-
 
