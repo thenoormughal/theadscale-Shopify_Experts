@@ -817,5 +817,44 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* ------------------------- */
+/* 📱 Mobile Responsiveness */
+/* ------------------------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 5%;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  /* Text alignment */
+  h1, h2, h3, p {
+    text-align: center;
+  }
+
+  /* Header fix */
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Portfolio grid */
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Padding reduce */
+  section {
+    padding: 50px 5%;
+  }
+}
 
 
