@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", function() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbar = document.getElementById('navbar');
+
+  menuToggle.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
+});
+
 // Counter Animation
 const counters = document.querySelectorAll('.counter');
 
@@ -64,6 +73,48 @@ filterBtns.forEach(btn => {
     }
   });
 });
+// View More / View Less Logic
+const viewMoreBtn = document.getElementById("view-more-btn");
+let showingAll = false;
+
+function updateVisibleItems() {
+  const visibleItems = Array.from(portfolioItems);
+  const isAllActive = document.querySelector(".filter-btn.active").dataset.filter === "all";
+
+  if (isAllActive) {
+    visibleItems.forEach((item, index) => {
+      if (!showingAll && index >= 8) {
+        item.style.display = "none";
+      } else {
+        item.style.display = "inline-block";
+      }
+    });
+  }
+}
+
+// Initial setup (show first 6 only)
+updateVisibleItems();
+
+// Button click event
+viewMoreBtn.addEventListener("click", () => {
+  showingAll = !showingAll;
+  updateVisibleItems();
+  viewMoreBtn.textContent = showingAll ? "View Less" : "View More";
+});
+
+// Also re-check visibility on filter change
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    showingAll = false;
+    viewMoreBtn.textContent = "View More";
+    updateVisibleItems();
+
+    // Show button only if "All" is selected
+    const isAllActive = btn.dataset.filter === "all";
+    document.querySelector(".view-more-container").style.display = isAllActive ? "block" : "none";
+  });
+});
+
 // Testimonials Slider
 const track = document.querySelector(".testimonial-track");
 const prevBtn = document.querySelector(".prev-btn");

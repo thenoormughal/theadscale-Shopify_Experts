@@ -13,17 +13,28 @@
 <body>
 
   <!-- Header -->
-  <header class="header">
-    <div class="container nav">
-      <img src="images/logo.png" alt="The Ad Scale Logo" class="logo">
-      <nav>
-        <ul class="nav-links">
-          
-          <li><a href="https://calendly.com/theadscaleagency/30min" class="btn">Get Started</a></li>
-        </ul>
-      </nav>
+<header class="header">
+  <div class="container nav">
+    <img src="images/logo.png" alt="The Ad Scale Logo" class="logo">
+
+    <!-- Mobile Toggle Button -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </header>
+
+    <nav id="navbar">
+      <ul class="nav-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://calendly.com/theadscaleagency/30min" class="btn">Get Started</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 
   <!-- Hero Section -->
   <section class="hero">
@@ -54,7 +65,7 @@
     </div>
   </section>
   <!--About Us-->
-  <section class="about-section">
+  <section id="about" class="about-section">
     <div class="container">
       <div class="about-content">
         <!-- Left Content -->
@@ -92,7 +103,7 @@
     </div>
   </section>
   <!--Portfolio section-->
-  <section class="portfolio-section">
+  <section id="portfolio" class="portfolio-section">
     <div class="container">
       <h2 class="section-title">Our Portfolio</h2>
       <p class="section-subtitle">
@@ -242,12 +253,33 @@
             <span>Result: 38% cart recovery</span>
           </div>
         </div>
+        <div class="portfolio-card" data-category="optimization">
+          <img src="images/opt3.png" alt="Conversion Optimization">
+          <div class="portfolio-info">
+            <h3>Checkout Funnel Optimization</h3>
+            <p>Streamlined process with trust elements.</p>
+            <span>Result: 38% cart recovery</span>
+          </div>
+        </div>
+        <div class="portfolio-card" data-category="optimization">
+          <img src="images/opt4.png" alt="Conversion Optimization">
+          <div class="portfolio-info">
+            <h3>Checkout Funnel Optimization</h3>
+            <p>Streamlined process with trust elements.</p>
+            <span>Result: 38% cart recovery</span>
+          </div>
+        </div>
   
       </div>
+      <!-- View More Button -->
+<div class="view-more-container">
+  <button id="view-more-btn">View More</button>
+</div>
+
     </div>
   </section>
   <!-- ================= TESTIMONIALS SECTION ================= -->
-<section class="testimonials-section" id="testimonials">
+<section id="testimonial "class="testimonials-section">
   <div class="container">
     <h2 class="section-title">What Our Clients Say</h2>
 
@@ -412,7 +444,7 @@
   </div>
 </section>
 <!-- CTA Section -->
-<section class="cta">
+<section id="contact" class="cta">
   <div class="cta-content">
     <h2>Ready to Scale Your Store?</h2>
     <p>From design to sales optimization — we handle everything to grow your brand.</p>

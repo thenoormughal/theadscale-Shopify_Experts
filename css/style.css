@@ -24,27 +24,77 @@ html {
 /* Header */
 .header {
   background: rgba(0,0,0,0.9);
-  padding: 15px 0;
-  position: fixed; top: 0; width: 100%;
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 1000;
 }
-.logo { height: 45px; }
+
 .nav {
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
 }
+
+.logo {
+  height: 45px; /* Desktop ke liye best size */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain;
+  display: block;
+}
+
+/* Navigation */
 .nav-links {
-  list-style: none; display: flex; gap: 30px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin: 0;
 }
+
 .nav-links a {
-  color: #fff; text-decoration: none; font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
   transition: 0.3s;
+  white-space: nowrap;
 }
-.nav-links a:hover { color: orange; }
+
+.nav-links a:hover {
+  color: orange;
+}
+
+/* Get Started Button */
 .nav-links .btn {
   background: linear-gradient(45deg, orange, #ff6600);
-  padding: 10px 22px; border-radius: 25px;
-  color: #fff; font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
 }
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+}
+
+
 
 /* Hero Section */
 .hero {
@@ -279,6 +329,27 @@ html {
   font-size: 0.9rem;
   color: #ff944d;
 }
+/* View More Button */
+.view-more-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#view-more-btn {
+  background: linear-gradient(45deg, #ff6600, #ff944d);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#view-more-btn:hover {
+  background: #ff6600;
+}
+
 
 
 /* ================= TESTIMONIALS SECTION ================= */
