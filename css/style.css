@@ -879,36 +879,47 @@ body {
     padding: 60px 5%;
   }
 
-  /* Testimonials */
-  .testimonial-section {
-    overflow-x: hidden;
-    padding: 50px 20px;
+  /* TESTIMONIALS RESPONSIVE FIX */
+
+.testimonials-section {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.testimonial-card {
+  width: 100%;
+  max-width: 350px; /* Optional: keep card readable */
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .testimonials-container {
+    flex-direction: column;
+    padding: 0 10px;
   }
-  
-  .testimonial-track {
-    display: flex;
-    transition: transform 0.4s ease;
-    gap: 20px;
-    padding: 0 5px;
-    box-sizing: border-box;
-  }
-  
+
   .testimonial-card {
-    min-width: 100%;
-    box-sizing: border-box;
+    max-width: 100%;
+    margin: 10px auto;
   }
-  
-  @media (min-width: 768px) {
-    .testimonial-card {
-      min-width: calc(100% / 2 - 20px);
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .testimonial-card {
-      min-width: calc(100% / 3 - 20px);
-    }
-  }
+}
+
   
   /* Banner */
   .banner {
@@ -952,3 +963,58 @@ body {
     gap: 10px;
   }
 } 
+/* UNIVERSAL RESPONSIVE FIX (Add at end of your CSS) */
+
+/* 1️⃣ Prevent horizontal overflow globally */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* 2️⃣ Ensure all sections have side padding */
+section,
+.about-section,
+.services-section {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* 3️⃣ Fix for flex or grid containers */
+.about-content,
+.services-grid,
+.portfolio-grid,
+.contact-content {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* 4️⃣ Align inner content properly */
+.about-content h2,
+.about-content p,
+.service-card,
+.portfolio-item,
+.contact-info {
+  text-align: left;
+  width: 100%;
+}
+
+/* 5️⃣ Optional: limit card width */
+.service-card,
+.portfolio-item {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* 6️⃣ Make sure everything stays responsive */
+@media (max-width: 768px) {
+  .services-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
