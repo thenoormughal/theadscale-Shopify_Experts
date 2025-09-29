@@ -882,11 +882,9 @@ body {
   /* TESTIMONIALS RESPONSIVE FIX */
 
 .testimonials-section {
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  overflow-x: hidden;
+    text-align: left;
+    padding: 60px 5%;
+  }
 }
 
 .testimonials-container {
