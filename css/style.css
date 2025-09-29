@@ -816,21 +816,30 @@ img {
     margin-top: 30px;
   }
 
-  /* 📘 ABOUT SECTION FIX */
-.about-section {
-  padding: 60px 20px; /* mobile padding add */
+ /* 🌍 UNIVERSAL FIX – Remove Horizontal Scroll */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
   box-sizing: border-box;
-  overflow-x: hidden; /* prevent right cut */
+}
+
+/* 📘 ABOUT SECTION FIX */
+.about-section {
+  padding: 60px 15px; /* reduced for mobile balance */
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .about-content {
+  display: flex;
   flex-direction: column;
+  align-items: flex-start; /* align left */
   text-align: left;
-  gap: 30px;
-  align-items: flex-start; /* ensure left alignment */
+  gap: 20px;
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .about-content h2,
@@ -838,34 +847,47 @@ img {
   text-align: left;
   width: 100%;
   margin: 0;
+  padding-right: 0; /* prevent right cut */
 }
-
 
 /* 🧩 SERVICES SECTION FIX */
 .services-section {
-  padding: 60px 20px; /* proper mobile spacing */
+  padding: 60px 15px;
   box-sizing: border-box;
   overflow-x: hidden;
+  width: 100%;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* one per line on mobile */
   gap: 25px;
-  justify-items: center; /* centers each card properly */
+  justify-items: center; /* center cards */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .service-card {
   width: 100%;
-  max-width: 350px; /* ensure cards don’t stretch too wide */
+  max-width: 360px; /* safe size for mobile */
   text-align: left;
+  padding: 20px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
-/* Optional: prevent scroll horizontally anywhere */
-body {
-  overflow-x: hidden;
+/* 📱 Responsive check for mid-screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-section,
+  .services-section {
+    padding: 80px 40px;
+  }
+
+  .service-card {
+    max-width: 45%;
+  }
 }
+
 
 
   /* Portfolio */
@@ -879,46 +901,94 @@ body {
     padding: 60px 5%;
   }
 
-  /* TESTIMONIALS RESPONSIVE FIX */
-
+ /* 💬 TESTIMONIALS FINAL FIX */
 .testimonials-section {
   width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 60px 15px;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow: hidden; /* prevent horizontal cut */
+  position: relative;
 }
 
-.testimonials-container {
+/* Track wrapper (slider container) */
+.testimonial-track {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
   gap: 20px;
+  transition: transform 0.5s ease;
   width: 100%;
   box-sizing: border-box;
+  justify-content: center; /* center the track items */
+  overflow: visible;
 }
 
+/* Individual Cards */
 .testimonial-card {
-  width: 100%;
-  max-width: 350px; /* Optional: keep card readable */
+  flex: 0 0 90%; /* card takes 90% of screen width */
+  max-width: 400px;
   margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
   box-sizing: border-box;
   text-align: left;
 }
 
-/* Responsive adjustment */
-@media (max-width: 768px) {
-  .testimonials-container {
-    flex-direction: column;
-    padding: 0 10px;
-  }
-
+/* For mid screens (tablets) */
+@media (min-width: 768px) {
   .testimonial-card {
-    max-width: 100%;
-    margin: 10px auto;
+    flex: 0 0 45%; /* show 2 side-by-side if possible */
+    max-width: 450px;
   }
 }
+
+/* For large screens */
+@media (min-width: 1024px) {
+  .testimonial-card {
+    flex: 0 0 30%; /* show 3 in a row */
+    max-width: 350px;
+  }
+}
+
+/* Buttons position fix (prev/next) */
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* On small devices, move buttons slightly inward */
+@media (max-width: 600px) {
+  .prev-btn, .next-btn {
+    top: auto;
+    bottom: 10px;
+    transform: none;
+    padding: 8px 12px;
+  }
+  .prev-btn {
+    left: 30%;
+  }
+  .next-btn {
+    right: 30%;
+  }
+}
+
 
   
   /* Banner */
